@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Image Merger Pro</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- Toolbar -->
+    <!-- ========================= -->
+
+    <header class="toolbar">
+
+        <div class="toolbar-left">
+
+            <label class="btn">
+
+                📂 Thêm ảnh
+
+                <input
+                    id="imageInput"
+                    type="file"
+                    accept="image/*"
+                    multiple
+                    hidden>
+
+            </label>
+
+            <button id="cropBtn">
+                ✂ Crop
+            </button>
+
+            <button id="mergeBtn">
+                🖼 Ghép
+            </button>
+
+            <button id="downloadBtn">
+                💾 PNG
+            </button>
+
+            <label class="btn cols-field">
+
+                Số cột
+
+                <input
+                    id="colsInput"
+                    type="number"
+                    min="1"
+                    max="20"
+                    placeholder="Tự động">
+
+            </label>
+
+            <button id="autoGridBtn">
+                🔄 Tự động
+            </button>
+
+        </div>
+
+        <div class="toolbar-right">
+
+            <label>
+
+                Zoom
+
+                <input
+                    id="zoomRange"
+                    type="range"
+                    min="20"
+                    max="300"
+                    value="100">
+
+            </label>
+
+            <span id="zoomText">
+
+                100%
+
+            </span>
+
+            <span id="imageCount">
+
+                0 ảnh
+
+            </span>
+
+        </div>
+
+    </header>
+
+    <!-- ========================= -->
+    <!-- Main -->
+    <!-- ========================= -->
+
+    <main class="main">
+
+        <!-- ===================== -->
+        <!-- Sidebar -->
+        <!-- ===================== -->
+
+        <aside
+            id="sidebar"
+            class="sidebar">
+
+        </aside>
+
+        <!-- ===================== -->
+        <!-- Preview -->
+        <!-- ===================== -->
+
+        <section
+            class="preview-wrapper">
+
+            <canvas
+                id="preview">
+            </canvas>
+
+        </section>
+
+    </main>
+
+    <!-- ========================= -->
+    <!-- Status -->
+    <!-- ========================= -->
+
+    <footer class="statusbar">
+
+        <span id="statusText">
+
+            Sẵn sàng
+
+        </span>
+
+    </footer>
+
+    <!-- ========================= -->
+    <!-- Scripts -->
+    <!-- ========================= -->
+
+    <script src="js/utils.js"></script>
+
+    <script src="js/sidebar.js"></script>
+
+    <script src="js/crop.js"></script>
+
+    <script src="js/merge.js"></script>
+
+    <script src="js/preview.js"></script>
+
+    <script src="js/drag.js"></script>
+
+    <script src="js/export.js"></script>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

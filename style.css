@@ -1,0 +1,724 @@
+/* ===========================================
+   FONTS
+=========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600;700&display=swap');
+
+
+/* ===========================================
+   TOKENS
+=========================================== */
+
+:root{
+
+    --bg-void:#0e0d12;
+
+    --bg-panel:#1a1820;
+
+    --bg-panel-raised:#221f2a;
+
+    --bg-card:#15131a;
+
+    --gold:#c9a24b;
+
+    --gold-bright:#e3c374;
+
+    --gold-dim:#7a6534;
+
+    --violet:#8b5fbf;
+
+    --violet-bright:#a87fe0;
+
+    --ink:#f5f1e8;
+
+    --ink-dim:#9a93a8;
+
+    --ink-faint:#6b6478;
+
+    --danger:#d3455a;
+
+    --danger-bright:#ef5a72;
+
+    --line:#332e3d;
+
+    --font-display:'Cinzel', serif;
+
+    --font-body:'Inter', "Segoe UI", Arial, sans-serif;
+
+}
+
+
+/* ===========================================
+   RESET
+=========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    font-family:var(--font-body);
+
+    background:var(--bg-void);
+
+    color:var(--ink);
+
+}
+
+body{
+
+    background-image:
+
+        radial-gradient(
+
+            circle at 20% 0%,
+
+            rgba(139,95,191,.08),
+
+            transparent 45%
+
+        ),
+
+        radial-gradient(
+
+            circle at 85% 100%,
+
+            rgba(201,162,75,.06),
+
+            transparent 50%
+
+        );
+
+}
+
+
+/* ===========================================
+   TOOLBAR
+=========================================== */
+
+.toolbar{
+
+    height:64px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 24px;
+
+    background:var(--bg-panel);
+
+    border-bottom:1px solid var(--line);
+
+    flex-shrink:0;
+
+    box-shadow:0 1px 0 rgba(201,162,75,.15);
+
+}
+
+.toolbar-left{
+
+    display:flex;
+
+    gap:10px;
+
+    align-items:center;
+
+}
+
+.toolbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.toolbar button,
+.toolbar .btn{
+
+    background:linear-gradient(180deg, #2a2733, #221f2a);
+
+    color:var(--ink);
+
+    border:1px solid var(--line);
+
+    padding:9px 16px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    transition:.18s ease;
+
+    font-family:var(--font-body);
+
+    font-weight:600;
+
+    font-size:13.5px;
+
+    letter-spacing:.2px;
+
+    user-select:none;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+}
+
+.toolbar button:hover,
+.toolbar .btn:hover{
+
+    border-color:var(--gold);
+
+    color:var(--gold-bright);
+
+    box-shadow:0 0 0 1px rgba(201,162,75,.25) inset;
+
+}
+
+/* nút hành động chính: Ghép — nhấn vàng kim */
+
+#mergeBtn{
+
+    background:linear-gradient(180deg, var(--gold-bright), var(--gold));
+
+    border-color:var(--gold);
+
+    color:#1a1408;
+
+}
+
+#mergeBtn:hover{
+
+    color:#1a1408;
+
+    box-shadow:0 0 16px rgba(201,162,75,.35);
+
+}
+
+/* nút xuất file — nhấn tím huyền thoại */
+
+#downloadBtn{
+
+    background:linear-gradient(180deg, var(--violet-bright), var(--violet));
+
+    border-color:var(--violet);
+
+    color:#1c1326;
+
+}
+
+#downloadBtn:hover{
+
+    color:#1c1326;
+
+    box-shadow:0 0 16px rgba(139,95,191,.4);
+
+}
+
+.toolbar input[type=range]{
+
+    width:140px;
+
+    accent-color:var(--gold);
+
+}
+
+.cols-field{
+
+    background:var(--bg-panel-raised);
+
+    border:1px solid var(--line);
+
+    cursor:default;
+
+    font-weight:500;
+
+    color:var(--ink-dim);
+
+}
+
+#colsInput{
+
+    width:54px;
+
+    margin-left:8px;
+
+    border-radius:5px;
+
+    border:1px solid var(--line);
+
+    background:var(--bg-void);
+
+    color:var(--ink);
+
+    padding:6px 4px;
+
+    text-align:center;
+
+    font-family:var(--font-body);
+
+    font-weight:600;
+
+    font-variant-numeric:tabular-nums;
+
+}
+
+#colsInput::placeholder{
+
+    color:var(--ink-faint);
+
+    font-weight:400;
+
+}
+
+#colsInput:focus{
+
+    outline:none;
+
+    border-color:var(--gold);
+
+}
+
+#zoomText{
+
+    width:46px;
+
+    text-align:center;
+
+    font-variant-numeric:tabular-nums;
+
+    color:var(--ink-dim);
+
+    font-size:13px;
+
+}
+
+#imageCount{
+
+    color:var(--gold-bright);
+
+    font-weight:700;
+
+    font-variant-numeric:tabular-nums;
+
+    letter-spacing:.3px;
+
+}
+
+
+/* ===========================================
+   MAIN
+=========================================== */
+
+.main{
+
+    display:flex;
+
+    width:100%;
+
+    height:calc(100vh - 94px);
+
+}
+
+
+/* ===========================================
+   SIDEBAR
+=========================================== */
+
+.sidebar{
+
+    width:188px;
+
+    background:var(--bg-panel);
+
+    border-right:1px solid var(--line);
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    padding:14px 12px;
+
+}
+
+.sidebar::-webkit-scrollbar{
+
+    width:7px;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+
+    background:var(--gold-dim);
+
+    border-radius:8px;
+
+}
+
+.sidebar::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+
+/* ===========================================
+   THUMB ITEM — khung thẻ tướng
+=========================================== */
+
+.thumb-item{
+
+    position:relative;
+
+    margin-bottom:14px;
+
+    border:1px solid var(--line);
+
+    border-radius:8px;
+
+    transition:.18s ease;
+
+    cursor:grab;
+
+    overflow:hidden;
+
+    background:var(--bg-card);
+
+}
+
+.thumb-item::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:8px;
+
+    border:1px solid transparent;
+
+    pointer-events:none;
+
+    transition:.18s ease;
+
+}
+
+.thumb-item:hover{
+
+    border-color:var(--gold-dim);
+
+    transform:translateY(-1px);
+
+    box-shadow:0 4px 10px rgba(0,0,0,.4);
+
+}
+
+.thumb-item:hover::after{
+
+    border-color:rgba(201,162,75,.35);
+
+}
+
+.thumb-item.dragging{
+
+    opacity:.45;
+
+}
+
+
+.thumb{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:7px;
+
+}
+
+
+.remove-btn{
+
+    position:absolute;
+
+    top:6px;
+
+    right:6px;
+
+    width:24px;
+
+    height:24px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:50%;
+
+    background:rgba(20,18,24,.75);
+
+    color:var(--ink);
+
+    cursor:pointer;
+
+    font-size:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.15s ease;
+
+    backdrop-filter:blur(2px);
+
+}
+
+.remove-btn:hover{
+
+    background:var(--danger);
+
+    border-color:var(--danger-bright);
+
+    color:#fff;
+
+}
+
+
+/* ===========================================
+   PREVIEW
+=========================================== */
+
+.preview-wrapper{
+
+    flex:1;
+
+    overflow:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    background:
+
+        repeating-linear-gradient(
+
+            45deg,
+
+            #161420,
+
+            #161420 12px,
+
+            #181622 12px,
+
+            #181622 24px
+
+        );
+
+    padding:28px;
+
+}
+
+#preview{
+
+    background:#ffffff;
+
+    box-shadow:
+
+        0 0 0 1px rgba(201,162,75,.4),
+
+        0 12px 32px rgba(0,0,0,.55);
+
+    border-radius:4px;
+
+    cursor:default;
+
+}
+
+
+/* ===========================================
+   STATUS
+=========================================== */
+
+.statusbar{
+
+    height:30px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding-left:18px;
+
+    background:var(--bg-panel);
+
+    border-top:1px solid var(--line);
+
+    color:var(--ink-faint);
+
+    font-size:12.5px;
+
+}
+
+
+/* ===========================================
+   DRAG OVER
+=========================================== */
+
+.drag-over{
+
+    outline:2px dashed var(--gold-bright);
+
+    outline-offset:3px;
+
+    border-radius:8px;
+
+}
+
+
+/* ===========================================
+   BUTTON ACTIVE
+=========================================== */
+
+button:active{
+
+    transform:scale(.96);
+
+}
+
+
+/* ===========================================
+   RESPONSIVE
+=========================================== */
+
+@media (max-width:900px){
+
+    .sidebar{
+
+        width:140px;
+
+    }
+
+    .toolbar{
+
+        flex-direction:column;
+
+        height:auto;
+
+        padding:12px;
+
+        gap:10px;
+
+    }
+
+    .toolbar-left,
+    .toolbar-right{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+}
+
+
+/* ===========================================
+   ANIMATION
+=========================================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.thumb-item{
+
+    animation:fadeIn .22s ease;
+
+}
+
+
+/* viền vàng kim 2 lớp — thẻ đang chọn (signature element) */
+
+.thumb-item.selected{
+
+    border-color:var(--gold);
+
+    box-shadow:
+
+        0 0 0 1px var(--bg-void),
+
+        0 0 0 2px var(--gold),
+
+        0 0 14px rgba(201,162,75,.45);
+
+}
+
+.thumb-item.selected::after{
+
+    border-color:rgba(245,241,232,.25);
+
+    inset:3px;
+
+}
+
+
+.thumb-item.dimmed{
+
+    opacity:.25;
+
+    filter:grayscale(.4);
+
+    transition:opacity .2s, filter .2s;
+
+}
+
+.thumb-item.dimmed.drag-over{
+
+    opacity:1;
+
+    filter:none;
+
+}
+
+.dragging{
+
+    opacity:.4;
+
+}
